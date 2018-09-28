@@ -157,6 +157,100 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-fs.SyncWriteStream is deprecated" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/28/fs.SyncWriteStream is deprecated/">fs.SyncWriteStream is deprecated</a>
+    </h1>
+  
+
+        
+        <a href="/2018/09/28/fs.SyncWriteStream is deprecated/" class="archive-article-date">
+  	<time datetime="2018-09-28T14:22:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天在运行hexo的时候又报错了，错误具体信息如下：</p>
+<blockquote>
+</blockquote>
+<p>(node:96650) [DEP0061] DeprecationWarning: fs.SyncWriteStream is deprecated.</p>
+<p>难道是我很久不用它来写博客，闹情绪了？</p>
+<p>在网上查阅后给出的结果是，nodejs从8.0开始已经弃用了fs.SyncWriteStream方法，但是某些插件里面还是用到这个方法。查看Hexo项目也有这个一条issue，在hexo项目中其中有一个hexo-fs的插件调用了这个方法，所以需要更新hexo-fs插件，更新方法如下：</p>
+<blockquote>
+<p>npm install hexo-fs –save</p>
+</blockquote>
+<p>更新后于是再次运行hexo命令，结果还是报错（尴尬脸）。问题没有解决，hexo命令有个-debug参数，运行命令的时候加上这个参数，可以定位问题：</p>
+<blockquote>
+<p>hexo clean –debug</p>
+</blockquote>
+<p>随后找到发生错误的插件文件夹，定位到该插件使用的库文件夹，注释掉SyncWrite一行即可。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/王道转载//" class="article-tag-list-link color5">王道转载</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-蛋蛋上英文" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -865,139 +959,6 @@
 
 
   
-    <article id="post-freemyapps" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/12/06/freemyapps/">每天10分钟，FreeMyApps免费拿Gift Card 包括iTunes及Amazon（更新其他网站）</a>
-    </h1>
-  
-
-        
-        <a href="/2012/12/06/freemyapps/" class="archive-article-date">
-  	<time datetime="2012-12-06T03:05:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2012-12-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <div>    目前类似通过积分（Credit）兑换iTunesStore和Amazon美国区Gift Card的网站有好几个，后文会提到。首先，你当然得知道这个Gift Card（礼品卡）是个什么东西，然后就可以按照下面步骤来了，本文以FreeMyApps网站为例，其他网站基本一致。</div>
-
-<ol>
-<li>必须有一台ios设备。无论是iphone，ipad还是ipod touch都是可以的，当然越多越好。因为多台ios设备的话，就可以同时挣积分；</li>
-<li>准备一个iTunes的美国区的账号（<a href="http://bbs.app111.com/thread-12380-1-1.html" title="【教程】iTUnes免费，免信用卡 帐号申请" target="_blank" rel="noopener">教程点此</a>）。PS：事实证明，大部分app也可以在中国区里找到；</li>
-<li>在Safari中，打开<a href="http://m.freemyapps.com/share/url/bcaa51ba" title="FreeMyApps网站" target="_blank" rel="noopener">FreeMyApps网站</a>（含邀请链接，可以增加您的初始积分）；</li>
-<li>点击带积分的app，链接iTunes中安装</li>
-<li><img src="http://ww3.sinaimg.cn/large/a74ecc4cjw1dzjsf1zwcwj.jpg" alt="" title="FreeMyApps"></li>
-<li>首次使用，会先进入“设置”，在弹出设备验证窗口，询问是否安装描述文件时，点“安装”即可；</li>
-<li>安装完后，回到safari 浏览器fma界面，设置就到此结束了；</li>
-<li><p>之后就可以使用了。点击推送来的软件，链接到iTunes Store中正常安装，运行30秒就可以获得相应积分了。<br><div>
-        
-          <a class="article-more-a" href="/2012/12/06/freemyapps/#more">阅读更多 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">amazon</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">apptrailers</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">bamboo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">card</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">FeaturePoints</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">fma</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">freemyapps</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">gift</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">itunes</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">juno</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">免费</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/王道转载//" class="article-tag-list-link color5">王道转载</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1100,22 +1061,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">爱否</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">book</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">mac</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">pc</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">电脑盲</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1251,6 +1196,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">picasa</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">apptrailers</a>
               </li>
              
@@ -1291,18 +1244,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">picasa</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">张艺谋</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">贝尔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">流水</a>
               </li>
              
@@ -1327,6 +1268,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">张艺谋</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">贝尔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">8547</a>
               </li>
              
@@ -1336,10 +1285,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">nxt</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">罗马</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1363,15 +1308,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">罗马</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">约拿情结</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">改革</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">青年报</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1383,11 +1324,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">旅行</a>
+                <a href="javascript:void(0)" class="js-tag color3">改革</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">西藏</a>
+                <a href="javascript:void(0)" class="js-tag color4">青年报</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1396,6 +1337,30 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">浮躁</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">旅行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">西藏</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">book</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">mac</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">pc</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">电脑盲</a>
               </li>
             
             <div class="clearfix"></div>
